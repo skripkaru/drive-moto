@@ -5,6 +5,8 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Drive Moto</title>
+   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+   <link rel="icon" href="/favicon.ico" type="image/x-icon">
    <link rel="stylesheet" href="css/app.min.css">
 </head>
 
@@ -84,7 +86,7 @@
       </div>
    </header>
 
-   <div class="intro">
+   <section class="intro section">
       <div class="container">
          <div class="intro__inner">
             <div class="swiper-container">
@@ -100,15 +102,21 @@
                <div class="swiper-button-prev"></div>
                <div class="swiper-button-next"></div>
             </div>
-            <div class="sale">
+            <a href="#" class="sale">
                <div class="sale__header">
                   <div class="sale__header-info">акция</div>
                   <div class="sale__header-price">
                      <div class="sale__header-price-new">
-                        190 000
+                        <span>190 000</span>
+                        <svg>
+                           <use xlink:href="svg/sprite/sprite.svg#ruble"></use>
+                        </svg>
                      </div>
                      <div class="sale__header-price-old">
-                        225 000
+                        <span>225 000</span>
+                        <svg>
+                           <use xlink:href="svg/sprite/sprite.svg#ruble"></use>
+                        </svg>
                      </div>
                   </div>
                </div>
@@ -119,13 +127,45 @@
                <div class="sale__footer">
                   <div class="sale__footer-info">Акция действует до <span>31.08.2020</span></div>
                </div>
+            </a>
+         </div>
+      </div>
+   </section>
+
+   <section class="search section">
+      <div class="container">
+         <div class="search__inner">
+            <div class="search__tabs">
+               <button data-tab='1' class="search__tabs-item active">Поиск по номеру</button>
+               <button data-tab='2' class="search__tabs-item">Поиск по марке</button>
+               <button data-tab='3' class="search__tabs-item">Поиск по названию товара</button>
+            </div>
+            <div class="search__content">
+               <div data-tab='1' class="search__content-item active">
+                  <form class="search__content-form">
+                     <input class="search__content-input" type="text" placeholder="Введите номер">
+                     <button class="search__content-btn" type="submit">искать</button>
+                  </form>
+               </div>
+               <div data-tab='2' class="search__content-item">
+                  <form class="search__content-form">
+                     <input class="search__content-input" type="text" placeholder="Введите марку">
+                     <button class="search__content-btn" type="submit">искать</button>
+                  </form>
+               </div>
+               <div data-tab='3' class="search__content-item">
+                  <form class="search__content-form">
+                     <input class="search__content-input" type="text" placeholder="Введите название товара">
+                     <button class="search__content-btn" type="submit">искать</button>
+                  </form>
+               </div>
             </div>
          </div>
       </div>
-   </div>
+   </section>
 
 
-
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="js/app.min.js"></script>
 </body>
 

@@ -41,7 +41,7 @@ function styles() {
       .pipe(browserSync.stream());
 }
 
-function svgSprites() {
+function svgsprite() {
    return src('app/svg/**/*.svg') // svg files for sprite
       .pipe(svgSprite({
          mode: {
@@ -64,7 +64,7 @@ function buildcopy() {
       'app/css/**/*.min.css',
       'app/js/**/*.min.js',
       'app/fonts/**/*.woff2',
-      'app/svg/**/*.svg',
+      'app/svg/**/*',
       'app/img/**/*',
    ], {base: 'app'})
       .pipe(dest('dist'));
