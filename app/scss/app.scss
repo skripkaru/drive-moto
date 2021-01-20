@@ -1,0 +1,79 @@
+@import"fonts";
+@import"variables";
+@import"typography";
+@import"buttons";
+
+
+@import"pages/main.scss";
+
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	position: relative;
+	min-width: 320px;
+	font-family: 'SF Pro Display', Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	color: $textcolor;
+	line-height: 1.4;
+	overflow-x: hidden;
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: inherit;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+button {
+	display: inline-block;
+	padding: 0;
+	color: inherit;
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
+	transition: all .3s ease;
+}
+
+input,
+textarea {
+	outline: none;
+
+	&:focus:required:invalid {
+		border-color: #FF504F;
+	}
+
+	&:required:valid {
+		border-color: #00B669;
+	}
+}
+
+::placeholder {
+	color: $gray;
+}
+
+::selection {
+	background-color: $accent;
+	color: $white;
+}
+
+.container {
+	max-width: 1170px;
+	padding: 0 15px;
+	margin: 0 auto;
+}

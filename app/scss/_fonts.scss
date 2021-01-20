@@ -1,0 +1,13 @@
+@mixin font($fname, $fstyle, $fweight, $furl) {
+	@font-face {
+		font-family: $fname;
+		font-style: $fstyle;
+		font-weight: $fweight;
+		font-display: swap;
+		src: local($fname), url($furl) format('woff2');
+	}
+}
+
+@include font('SF Pro Display', normal, 400, '../fonts/SFProDisplay-Regular.woff2');
+@include font('SF Pro Display', normal, 500, '../fonts/SFProDisplay-Medium.woff2');
+@include font('SF Pro Display', normal, 700, '../fonts/SFProDisplay-Bold.woff2');
