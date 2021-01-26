@@ -30,7 +30,6 @@ function scripts() {
 function styles() {
    return src([
       'node_modules/swiper/swiper-bundle.min.css',
-      'node_modules/normalize.css/normalize.css',
       'app/scss/app.scss',
    ])
       .pipe(sass())
@@ -42,11 +41,11 @@ function styles() {
 }
 
 function svgsprite() {
-   return src('app/svg/**/*.svg') // svg files for sprite
+   return src('app/svg/**/*.svg')
       .pipe(svgSprite({
          mode: {
             stack: {
-               sprite: "../sprite.svg"  //sprite file name
+               sprite: "../sprite.svg"
             }
          },
       }

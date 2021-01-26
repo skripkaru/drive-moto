@@ -1,0 +1,34 @@
+.breadcrumbs {
+	margin-bottom: 40px;
+
+	&__list {}
+
+	&__list-item {
+		position: relative;
+		display: inline-block;
+		padding-right: 16px;
+		margin-right: 10px;
+		font-size: 15px;
+		line-height: 18px;
+		color: #C4C4C4;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 5px;
+			right: 0;
+			width: 6px;
+			height: 9px;
+			background: url('/svg/chevron-right.svg') center no-repeat;
+		}
+
+		&:last-child {
+			margin-right: 0;
+			padding-right: 0;
+
+			&::after {
+				display: none;
+			}
+		}
+	}
+}

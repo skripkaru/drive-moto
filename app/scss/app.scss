@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap');
+@import "../../node_modules/bootstrap/scss/bootstrap-reboot.scss";
 @import"fonts";
 @import"variables";
 @import"typography";
 @import"buttons";
 
 
-@import"pages/main.scss";
-
+@import"pages/main";
+@import"pages/catalog";
 
 body {
 	min-width: 320px;
@@ -20,6 +22,11 @@ a {
 	display: inline-block;
 	text-decoration: none;
 	color: inherit;
+
+	&:hover {
+		color: inherit;
+		text-decoration: none;
+	}
 }
 
 img {
@@ -66,7 +73,7 @@ textarea {
 
 .container {
 	width: 100%;
-	max-width: 1170px;
+	max-width: 1200px;
 	padding: 0 15px;
 	margin: 0 auto;
 }
