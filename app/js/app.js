@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', function () {
-	
+
 	const introSlider = new Swiper('.intro-slider', {
 		loop: true,
 		pagination: {
@@ -19,65 +19,65 @@ window.addEventListener('DOMContentLoaded', function () {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
 		},
+		observer: true,
+		observeParents: true
 	})
 
-	function addFavorite(btns) {
-		const favoriteBtns = document.querySelectorAll(btns);
+	function addActiveClass(btns) {
+		const allBtns = document.querySelectorAll(btns);
 
-		favoriteBtns.forEach(btn => {
+		allBtns.forEach(btn => {
 			btn.addEventListener('click', () => {
 				btn.classList.toggle('active');
 			})
 		})
 	}
 
-	addFavorite('.product-item__favorite');
-
-	const tabs = (headerSelector, tabSelector, contentSelector, activeClass, display = 'block') => {
-		const header = document.querySelector(headerSelector),
-			tab = document.querySelectorAll(tabSelector),
-			content = document.querySelectorAll(contentSelector);
-	
-		function hideTabContent() {
-			content.forEach(item => {
-				item.style.display = 'none';
-			})
-	
-			tab.forEach(item => {
-				item.classList.remove(activeClass);
-			})
-		}
-	
-		function showTabContent(i = 0) {
-			content[i].style.display = display;
-			tab[i].classList.add(activeClass);
-		}
-	
-		hideTabContent();
-		showTabContent();
-	
-		header.addEventListener('click', (e) => {
-			const target = e.target;
-			if (target &&
-				(target.classList.contains(tabSelector.replace(/\./, '')) ||
-					target.parentNode.classList.contains(tabSelector.replace(/\./, '')))) {
-				tab.forEach((item, i) => {
-					if (target == item || target.parentNode == item) {
-						hideTabContent();
-						showTabContent(i);
-					}
-				})
-			}
-		})
-	};
-	
-	tabs('.search__inner', '.search__tabs-item', '.search__content-item', 'active')
-	tabs('.products__tabs-wrapper', '.products__tab', '.products__content-item', 'active')
-	tabs('.products-popular__tabs-wrapper', '.products-popular__tab', '.products-popular__content-item', 'active')
-
-
-
+	addActiveClass('.product-item__favorite');
 
 });
+
+(function ($) {
+	$(function () {
+
+		$('nav.tabs__nav').on('click', 'button:not(.active)', function () {
+			$(this).addClass('active').siblings().removeClass('active')
+				.closest('div.tabs').find('div.tabs__content-item').removeClass('active')
+				.eq($(this).index()).addClass('active');
+		})
+
+
+		$('.filter-style').styler();
+
+
+		$('.filter__item-drop, .filter-btn__extra').on('click', function() {
+			$(this).toggleClass('active')
+			$(this).next().slideToggle('200')
+		})
+
+		$(".js-range-slider").ionRangeSlider({
+			type: "double",
+		});
+
+		$('.catalog__filter-btngrid').on('click', function() {
+			$(this).addClass('active')
+			$('.catalog__filter-btnline').removeClass('active')
+			$('.product-item').removeClass('product-item__line')
+		})
+
+		$('.catalog__filter-btnline').on('click', function() {
+			$(this).addClass('active')
+			$('.catalog__filter-btngrid').removeClass('active')
+			$('.product-item').addClass('product-item__line')
+		})
+
+		
+		
+
+	});
+})(jQuery);
+
+
+
 
 

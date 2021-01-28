@@ -1,8 +1,6 @@
 .breadcrumbs {
 	margin-bottom: 40px;
 
-	&__list {}
-
 	&__list-item {
 		position: relative;
 		display: inline-block;
@@ -71,19 +69,38 @@
 			}
 		}
 	}
-
+	
 	&__filter-btn {
 		display: flex;
 		align-items: center;
-
+		
 		button+button {
 			margin-left: 10px;
 		}
 	}
 
-	&__filter-btngrid {}
+	&__filter-button {
 
-	&__filter-btnline {}
+		&.active {
+			opacity: .3;
+		}
+	}
+	
+	&__filter-btngrid {
+
+	}
+
+	&__filter-btnline {
+
+	}
+
+	.select-item {
+		margin-right: 34px;
+		width: 178px;
+		line-height: 17px;
+		color: #2F3035;
+		border: 1px solid #D7D9DF;
+	}
 
 	&__inner {
 		display: flex;
@@ -96,6 +113,7 @@
 	}
 
 	&__inner-list {
+		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
 		margin: 0 -15px;
@@ -123,14 +141,360 @@
 		line-height: 22px;
 		color: #C4C4C4;
 		border: 2px solid transparent;
-		
+
 		&.active {
 			border: 2px solid $accent;
 			color: $accent;
 		}
+	}
+}
 
-		a {
-			
+.aside-tabs {
+
+	&__nav {
+		margin-bottom: 40px;
+		display: flex;
+	}
+
+	&__nav-item {
+		width: 50%;
+		font-weight: bold;
+		font-size: 16px;
+		line-height: 19px;
+		letter-spacing: 0.09em;
+		text-transform: uppercase;
+		text-align: left;
+		color: #C4C4C4;
+
+		span {
+			display: inline-block;
+			padding-bottom: 7px;
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				display: block;
+				width: 100%;
+				height: 2px;
+				background-color: $accent;
+				transform: scale(0);
+				transition: transfrom .3s;
+			}
+		}
+
+		&.active {
+			color: $textcolor;
+
+			span {
+				&::before {
+					transform: scale(1);
+				}
+
+			}
+
 		}
 	}
+
+	&__content-item {
+		display: none;
+
+		&.active {
+			display: block;
+		}
+	}
+}
+
+.aside-filter {
+
+	&__item-drop {
+		margin: 40px 0;
+	}
+
+	&__item-title {
+		margin-bottom: 0;
+		padding-left: 26px;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 19px;
+	}
+
+	&__item-content {
+		margin-top: 10px;
+		display: flex;
+		flex-wrap: wrap;
+
+		&.aside-filter__item-radio {
+			flex-wrap: nowrap;
+		}
+	}
+
+	&__content-box {
+		width: 50%;
+		margin-bottom: 10px;
+	}
+
+	&__content-label {
+		margin-bottom: 0;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 17px;
+		cursor: pointer;
+	}
+
+	&__item-list {
+		margin: 46px 0 40px;
+	}
+
+	.filter__item-drop {
+		position: relative;
+		cursor: pointer;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 5px;
+			width: 12px;
+			height: 8px;
+			background: url('/svg/chevron-down.svg');
+		}
+
+		&.active {
+			&::before {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	.filter__item-list {
+		padding-top: 34px;
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		border-bottom: 2px solid #c4c4c4;
+	}
+
+	.filter__item-listtitle {
+		margin: 0;
+		padding-bottom: 14px;
+		padding-left: 25px;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 19px;
+	}
+
+	.filter__item-listselect {
+		font-family: $barlow;
+		font-size: 14px;
+		line-height: 17px;
+		color: #48494D;
+	}
+
+	.filter-more {
+		width: 100%;
+		font-size: 14px;
+		line-height: 17px;
+		color: $accent;
+	}
+
+	.filter-more__link {
+		border-bottom: 1px solid $accent;
+	}
+
+	.filter-search {
+		width: 100%;
+		height: 30px;
+		margin: 10px 0 20px;
+		padding: 0 20px;
+		font-size: 12px;
+		line-height: 14px;
+		border: 1px solid #E0E0E0;
+
+		&::placeholder {
+			color: #BDBEC2;
+		}
+	}
+
+	.filter-btn__send {
+		padding: 16px 85px;
+		margin-bottom: 15px;
+		font-size: 15px;
+		line-height: 18px;
+		text-align: center;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: #BDBEC2;
+		background: #F0F0F4;
+
+		&.active {
+			background-color: $accent;
+			color: $white;
+		}
+	}
+
+	.filter-btn__extra {
+		margin-bottom: 0;
+		position: relative;
+		display: inline-block;
+		padding-right: 29px;
+		font-size: 13px;
+		line-height: 16px;
+
+		&::after {
+			content: '';
+			position: absolute;
+			right: 0;
+			top: 4px;
+			width: 12px;
+			height: 8px;
+			background: url('/svg/chevron-down.svg');
+		}
+
+		&.active {
+			&::after {
+				content: '';
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	.filter-btn__content {
+		display: none;
+	}
+
+	.filter-btn__reset {
+		font-size: 13px;
+		line-height: 16px;
+		color: #C4C4C4;
+		border-bottom: 1px solid #C4C4C4;
+	}
+
+	&__item-btn {
+		text-align: center;
+	}
+
+}
+
+.btn-checked {
+
+	.aside-filter__item-content {
+		flex-wrap: nowrap;
+		justify-content: space-between;
+	}
+
+	.aside-filter__content-box {
+		width: auto;
+	}
+
+	.aside-filter__content-label {
+		position: relative;
+		width: 63px;
+		height: 25px;
+		// background: #F0F0F4;
+	}
+
+	.jq-checkbox {
+		width: 63px;
+		height: 25px;
+		background: #F0F0F4;
+		border: none;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 14px;
+		letter-spacing: 0.07em;
+		color: #C4C4C4;
+
+		&.checked {
+			background-color: $accent;
+			color: $white;
+
+			.jq-checkbox__div {
+				display: none;
+			}
+
+			~.btn-checked__text {
+				color: $white;
+			}
+		}
+	}
+
+	&__text {
+		position: absolute;
+		top: 5px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 5;
+	}
+}
+
+.jq-selectbox__select {
+	height: 32px;
+	padding: 0 30px 0 10px;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	box-shadow: none;
+	text-shadow: none;
+
+	&:active {
+		background: transparent;
+		box-shadow: none;
+	}
+
+	&:hover {
+		background: transparent;
+	}
+}
+
+.jq-selectbox__trigger-arrow {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 34px;
+	height: 100%;
+	border: 0;
+}
+
+.jq-selectbox__trigger {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 34px;
+	height: 100%;
+	border-left: 0;
+	background: url('/svg/chevron-down.svg') center no-repeat;
+}
+
+.jq-selectbox.focused .jq-selectbox__select {
+	border: 0;
+}
+
+.jq-selectbox__dropdown {
+	margin: -6px 0 0;
+	padding-top: 15px;
+	box-shadow: none;
+	border: 1px solid #E0E0E0;
+	border-radius: 0;
+}
+
+.jq-selectbox__select:hover,
+.jq-selectbox__select:active {
+	box-shadow: none;
+}
+
+.jq-selectbox li {
+	color: rgba(0, 0, 0, 0.6);
+}
+
+.jq-selectbox li:hover {
+	background: rgba(107, 126, 172, 0.05);
+	color: rgba(0, 0, 0, 0.6);
+}
+
+.jq-selectbox li.selected {
+	background: rgba(107, 126, 172, 0.05);
+	color: rgba(0, 0, 0, 0.6);
 }
