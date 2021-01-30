@@ -71,7 +71,11 @@ window.addEventListener('DOMContentLoaded', function () {
 			$('.product-item').addClass('product-item__line')
 		})
 
-		
+		$('#rateYo').rateYo({
+			starWidth: "23px",
+			normalFill: "#C4C4C4",
+			ratedFill: "#1C62CD"
+		  });
 		
 
 	});
