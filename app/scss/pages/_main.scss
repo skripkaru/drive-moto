@@ -643,7 +643,7 @@
 			display: none;
 		}
 
-		.product-item__link {
+		.product-item__info {
 			display: inline-block;
 		}
 
@@ -728,12 +728,15 @@
 	}
 
 	&__link {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	&__info {
 		display: none;
-		// position: absolute;
-		// bottom: 25px;
-		// left: 50%;
-		// min-width: 180px;
-		// transform: translateX(-50%);
 		font-size: 16px;
 		line-height: 19px;
 		color: $accent;
