@@ -358,9 +358,9 @@
 
 		img {
 			margin: 0 auto;
-			width: 125px;
+			width: 200px;
 			height: 175px;
-			object-fit: cover;
+			object-fit: contain;
 		}
 	}
 
