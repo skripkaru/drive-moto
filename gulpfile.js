@@ -6,7 +6,6 @@ const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cleancss = require('gulp-clean-css');
 const del = require('del');
-const svgSprite = require('gulp-svg-sprite');
 
 function browsersync() {
    browserSync.init({
@@ -46,19 +45,6 @@ function styles() {
       .pipe(cleancss(({level: {1: {specialComments: 0}}/* , format: 'beautify' */})))
       .pipe(dest('app/css/'))
       .pipe(browserSync.stream());
-}
-
-function svgsprite() {
-   return src('app/svg/**/*.svg')
-      .pipe(svgSprite({
-         mode: {
-            stack: {
-               sprite: "../sprite.svg"
-            }
-         },
-      }
-      ))
-      .pipe(dest('app/svg/sprite/'));
 }
 
 function cleandist() {

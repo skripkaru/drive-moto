@@ -37,7 +37,7 @@
 		font-family: $barlow;
 		font-size: 30px;
 		line-height: 36px;
-		color: rgba(#2F3035, .6);
+		color: rgba($textcolor, .6);
 		overflow: hidden;
 
 		&::before {
@@ -47,7 +47,7 @@
 			left: 50%;
 			width: 100%;
 			height: 1px;
-			background-color: rgba(#2F3035, .6);
+			background-color: rgba($textcolor, .6);
 			transform: translate(-50%, -50%) rotate(-8deg);
 		}
 	}
@@ -85,7 +85,7 @@
 		margin-bottom: 21px;
 		font-size: 15px;
 		line-height: 18px;
-		color: rgba(#2F3035, .6);
+		color: rgba($textcolor, .6);
 	}
 
 	&__buttons {
@@ -93,8 +93,24 @@
 		align-items: center;
 		margin-bottom: 50px;
 
+
+
 		a+a {
 			margin-left: 30px;
+		}
+	}
+
+	&__btn-favorite {
+		svg {
+			width: 24px;
+			height: 22px;
+		}
+	}
+
+	&__btn-comparsion {
+		svg {
+			width: 20px;
+			height: 26px;
 		}
 	}
 
@@ -109,7 +125,7 @@
 		font-weight: normal;
 		font-size: 20px;
 		line-height: 24px;
-		color: rgba(#2F3035, .6);
+		color: rgba($textcolor, .6);
 
 		&:last-child {
 			margin-right: 0;
@@ -160,7 +176,7 @@
 		font-weight: normal;
 		font-size: 20px;
 		line-height: 24px;
-		border-bottom: 1px solid rgba(#2F3035, .1);
+		border-bottom: 1px solid rgba($textcolor, .1);
 	}
 
 	&__item-left {
@@ -193,6 +209,10 @@
 			background-color: $accent;
 		}
 	}
+
+	&__btn-mobile {
+		display: none;
+	}
 }
 
 .rate {
@@ -208,7 +228,7 @@
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
-		background: #F0F0F4;
+		background: $gray;
 	}
 
 	&__nav-item {
@@ -216,7 +236,7 @@
 		padding-bottom: 5px;
 		font-size: 20px;
 		line-height: 24px;
-		color: rgba(#2F3035, .6);
+		color: rgba($textcolor, .6);
 
 		&::before {
 			content: '';
@@ -261,14 +281,14 @@
 	&__label-search {
 		font-size: 17px;
 		line-height: 20px;
-		color: rgba(#2F3035, .7);
+		color: rgba($textcolor, .7);
 	}
 
 	&__input-search {
 		margin-left: 17px;
 		padding: 9px 37px 9px 17px;
 		margin-right: 100px;
-		background: #F0F0F4;
+		background: $gray;
 		border-radius: 3px;
 		border: 0;
 	}
@@ -277,7 +297,7 @@
 		margin-left: 54px;
 		font-size: 17px;
 		line-height: 20px;
-		color: rgba(#2F3035, .7);
+		color: rgba($textcolor, .7);
 	}
 
 	&__list {
@@ -289,14 +309,14 @@
 		display: flex;
 		font-size: 16px;
 		line-height: 22px;
-		color: rgba(#2F3035, .7);
-		border-bottom: 1px solid rgba(#2F3035, .1);
+		color: rgba($textcolor, .7);
+		border-bottom: 1px solid rgba($textcolor, .1);
 	}
 
 	&__list-itemtitle {
 		font-size: 20px;
 		line-height: 24px;
-		color: #2F3035;
+		color: $textcolor;
 	}
 
 	&__list-address {
@@ -344,8 +364,8 @@
 			font-size: 13px;
 			line-height: 16px;
 			letter-spacing: 0.12em;
-			color: #FFFFFF;
-			background: #1C62CD;
+			color: $white;
+			background: $accent;
 			border-radius: 3px;
 		}
 	}

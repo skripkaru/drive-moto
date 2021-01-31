@@ -17,6 +17,7 @@ body {
 	font-weight: normal;
 	color: $textcolor;
 	line-height: 1.5;
+	overflow-x: hidden;
 }
 
 a {
@@ -72,6 +73,10 @@ textarea {
 	color: $white;
 }
 
+.hidden {
+	display: none;
+}
+
 .container {
 	width: 100%;
 	max-width: 1200px;
@@ -114,7 +119,7 @@ textarea {
 	border-bottom: none;
 	border-left: none;
 	transform: rotate(0);
-	background: url('/svg/checked.svg') center no-repeat;
+	background: url('../../svg/checked.svg') center no-repeat;
 }
 
 .jq-radio.checked .jq-radio__div {
@@ -198,3 +203,5 @@ textarea {
 .irs--flat .irs-handle.state_hover>i:first-child, .irs--flat .irs-handle:hover>i:first-child {
 	background-color: transparent;
 }
+
+@import"media";

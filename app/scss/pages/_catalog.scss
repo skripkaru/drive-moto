@@ -1,5 +1,5 @@
 .breadcrumbs {
-	margin-bottom: 40px;
+	margin: 40px 0;
 
 	&__list-item {
 		position: relative;
@@ -17,7 +17,7 @@
 			right: 0;
 			width: 6px;
 			height: 9px;
-			background: url('/svg/chevron-right.svg') center no-repeat;
+			background: url('../../svg/chevron-right.svg') center no-repeat;
 		}
 
 		&:last-child {
@@ -69,13 +69,26 @@
 			}
 		}
 	}
-	
+
 	&__filter-btn {
 		display: flex;
 		align-items: center;
-		
+
 		button+button {
 			margin-left: 10px;
+		}
+	}
+
+	&__filter-btnfilter {
+		display: none;
+		margin-right: 15px;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 17px;
+
+		svg {
+			width: 20px;
+			height: 19px;
 		}
 	}
 
@@ -84,18 +97,24 @@
 		&.active {
 			opacity: .3;
 		}
+
+		svg {
+			width: 23px;
+			height: 21px;
+		}
 	}
 
 	.select-item {
 		margin-right: 34px;
 		width: 178px;
 		line-height: 17px;
-		color: #2F3035;
+		color: $textcolor;
 		border: 1px solid #D7D9DF;
 	}
 
 	&__inner {
 		display: flex;
+		align-items: flex-start;
 	}
 
 	&__inner-aside {
@@ -108,10 +127,12 @@
 		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
-		margin: 0 -15px;
+		// margin: 0 -15px;
+		justify-content: space-around;
 
 		.product-item {
-			margin: 0 15px 30px;
+			// margin: 0 15px 30px;
+			margin: 0 0 30px;
 		}
 	}
 }
@@ -199,6 +220,17 @@
 	}
 }
 
+.aside-btn {
+	display: none;
+	width: 100%;
+	padding: 12px 0;
+	margin-bottom: 30px;
+	text-align: center;
+	color: $white;
+	background-color: $accent;
+	text-transform: uppercase;
+}
+
 .aside-filter {
 
 	&__item-drop {
@@ -251,7 +283,7 @@
 			bottom: 5px;
 			width: 12px;
 			height: 8px;
-			background: url('/svg/chevron-down.svg');
+			background: url('../../svg/chevron-down.svg');
 		}
 
 		&.active {
@@ -319,7 +351,7 @@
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: #BDBEC2;
-		background: #F0F0F4;
+		background: $gray;
 
 		&.active {
 			background-color: $accent;
@@ -342,7 +374,7 @@
 			top: 4px;
 			width: 12px;
 			height: 8px;
-			background: url('/svg/chevron-down.svg');
+			background: url('../../svg/chevron-down.svg');
 		}
 
 		&.active {
@@ -385,13 +417,12 @@
 		position: relative;
 		width: 63px;
 		height: 25px;
-		// background: #F0F0F4;
 	}
 
 	.jq-checkbox {
 		width: 63px;
 		height: 25px;
-		background: #F0F0F4;
+		background: $gray;
 		border: none;
 		font-weight: bold;
 		font-size: 12px;
@@ -457,7 +488,7 @@
 	width: 34px;
 	height: 100%;
 	border-left: 0;
-	background: url('/svg/chevron-down.svg') center no-repeat;
+	background: url('../../svg/chevron-down.svg') center no-repeat;
 }
 
 .jq-selectbox.focused .jq-selectbox__select {
